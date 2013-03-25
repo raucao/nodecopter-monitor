@@ -56,6 +56,7 @@
 
 
 <script src="js/three.js/build/three.js"></script>
+<script src="js/voicecontrol.js"></script>
 <script src="/socket.io/socket.io.js"></script>
 
 <script>
@@ -507,5 +508,34 @@
     } ());
 
 </script>
+  <style>
+    #voicecontrol {
+      z-index: 10000;
+      position: absolute;
+      top: 0;
+      left: 50%;
+      margin-left: -200px;
+      width: 150px;
+      background: #ccc;
+      padding: 5px 10px;
+      line-height: 1.5em;
+    }
+  </style>
+  <section id="voicecontrol">
+    <p>
+      English
+      <select id="select_dialect">
+        <option value="en-AU">Australia</option>
+        <option value="en-CA">Canada</option>
+        <option value="en-IN">India</option>
+        <option value="en-NZ">New Zealand</option>
+        <option value="en-ZA">South Africa</option>
+        <option value="en-GB" selected="selected">United Kingdom</option>
+        <option value="en-US">United States</option>
+      </select>
+      <button onclick="startVoiceRecognition()">Start voice control</button>
+      <button onclick="stopVoiceRecognition()">Stop voice control</button>
+    </p>
+  </section>
 </body>
 </html>
